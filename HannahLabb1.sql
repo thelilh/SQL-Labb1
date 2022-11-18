@@ -39,7 +39,9 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='InventoryBalance' and xtype=
 		ID integer NOT NULL,
 		ISBN13 BIGINT NOT NULL,
 		Amount integer NOT NULL,
-		PRIMARY KEY(ID,ISBN13)
+		PRIMARY KEY(ID,ISBN13),
+		FOREIGN KEY(ISBN13) REFERENCES Books(ISBN13),
+		FOREIGN KEY(ID) REFERENCES Shops(ID)
     );
 GO
 --Om det inte finns något i tabellen Authors, lägg till.--
@@ -78,6 +80,16 @@ BEGIN
 		(9789174293098,'Invandrarna','Swedish',75,'2013/01/15',(SELECT ID FROM Authors WHERE [First Name] = 'Vilhelm' AND [Last Name] = 'Moberg')),
 		(9789174293104,'Nybyggarna','Swedish',75,'2013/01/15',(SELECT ID FROM Authors WHERE [First Name] = 'Vilhelm' AND [Last Name] = 'Moberg')),
 		(9789174293111,'Sista brevet till Sverige','Swedish',75,'2013/01/15',(SELECT ID FROM Authors WHERE [First Name] = 'Vilhelm' AND [Last Name] = 'Moberg'));
+END
+--Om det inte finns något i tabellen InventoryBalance, lägg till.--
+IF NOT EXISTS(SELECT * FROM InventoryBalance WHERE ID = 1)
+BEGIN
+	INSERT INTO InventoryBalance
+	--ID, ISBN, AMOUNT
+	VALUES
+	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),0),
+	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),0),
+	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),0);
 END
 --Välja alla tabller--
 SELECT * FROM Authors;
