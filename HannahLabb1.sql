@@ -2,13 +2,6 @@
 IF DB_ID (N'BookstoreDb') IS NULL
 	CREATE DATABASE BookstoreDb;
 GO
-DROP TABLE InventoryBalance;
-GO
-DROP TABLE Shops;
-GO
-DROP TABLE Books;
-GO
-DROP TABLE Authors;
 --Använd Databasen BookstoreDb.--
 USE BookstoreDb;
 GO
@@ -19,6 +12,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Authors' and xtype='U')
 		[First Name] nvarchar(max) NOT NULL,
 		[Last Name] nvarchar(max) NOT NULL,
 		[Birthdate] DATE NOT NULL,
+		[Death Date] DATE,
 		CONSTRAINT PK_Authors_ID PRIMARY KEY(ID)
     );
 GO
@@ -55,15 +49,33 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='InventoryBalance' and xtype=
 		CONSTRAINT FK_Inventory_ShopID FOREIGN KEY(ShopID) REFERENCES Shops(ID)
     );
 GO
+--Om InventoryBalance inte finns, skapa den.--
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Customers' and xtype='U')
+    CREATE TABLE Customers (
+		UserID integer NOT NULL,
+		UserShop integer NOT NULL, --Vilken butik tillhör användaren?
+		UserEmail nvarchar(max) NOT NULL, --Perfekt, användaren kan få sin email som login
+		UserPassword nvarchar(max) NOT NULL, --Vad menar du att detta är en säkerhetsrisk?
+		UserFirstName nvarchar(max) NOT NULL, --Användarens namn
+		UserLastName nvarchar(max) NOT NULL, --Användarens efternamn
+		UserCountry nvarchar(max) NOT NULL, --Användarens land
+		UserCity nvarchar(max) NOT NULL, --Användarens stad
+		UserState nvarchar(max) NOT NULL, --Användarens region
+		UserAdress nvarchar(max) NOT NULL, --Användarens adress
+		UserZipCode nvarchar(12) NOT NULL, --Detta är en nvarchar då Storbritannien, som exempel, har OX9 1AA
+		CONSTRAINT PK_CustomerID PRIMARY KEY(UserID),
+		CONSTRAINT FK_Customers_ShopID FOREIGN KEY(UserShop) REFERENCES Shops(ID)
+    );
+GO
 --Om det inte finns något i tabellen Authors, lägg till.--
 IF NOT EXISTS(SELECT * FROM Authors WHERE ID = 1)
 BEGIN
 	INSERT INTO Authors
-	--ID, First Name, Last Name, Birthdate
-	VALUES(1,'Karl','Marx','1818/05/05'),
-		(2,'Vilhelm','Moberg','1898/08/20'),
-		(3,'Karin','Boye','1900/10/26'),
-		(4,'Jo','Nesbø','1960/03/29');
+	--ID, First Name, Last Name, Birthdate, Death date
+	VALUES(1,'Karl','Marx','1818/05/05','1883/03/14'),
+		(2,'Vilhelm','Moberg','1898/08/20','1973/08/08'),
+		(3,'Karin','Boye','1900/10/26','1941/04/24'),
+		(4,'Jo','Nesbø','1960/03/29',NULL);
 END
 --Om det inte finns något i tabellen Shops, lägg till.--
 IF NOT EXISTS(SELECT * FROM Shops WHERE ID = 1)
@@ -100,61 +112,69 @@ BEGIN
 	INSERT INTO InventoryBalance
 	--ID, ISBN, AMOUNT
 	VALUES
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),44),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),90),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),34),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kungariket'),76),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kungariket'),85),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kungariket'),97),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kniv'),24),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kniv'),25),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kniv'),99),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Das Kapital'),60),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Das Kapital'),100),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Das Kapital'),53),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kommunistiska manifestet'),47),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kommunistiska manifestet'),14),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kommunistiska manifestet'),46),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Samlade dikter'),63),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Samlade dikter'),65),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Samlade dikter'),37),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kallocain'),17),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kallocain'),97),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kallocain'),80),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Astarte'),4),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Astarte'),97),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Astarte'),12),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kris'),57),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kris'),68),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kris'),7),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Ella gör sig fri'),2),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Ella gör sig fri'),97),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Ella gör sig fri'),82),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Utvandrarna'),43),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Utvandrarna'),67),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Utvandrarna'),8),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Invandrarna'),84),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Invandrarna'),39),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Invandrarna'),99),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Nybyggarna'),35),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Nybyggarna'),49),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Nybyggarna'),61),
-	((SELECT ID FROM Shops WHERE Name = 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Sista brevet till Sverige'),75),
-	((SELECT ID FROM Shops WHERE Name = 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Sista brevet till Sverige'),91),
-	((SELECT ID FROM Shops WHERE Name = 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Sista brevet till Sverige'),7);
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),44),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),90),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Rödhake'),34),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kungariket'),76),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kungariket'),85),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kungariket'),97),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kniv'),24),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kniv'),25),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kniv'),99),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Das Kapital'),60),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Das Kapital'),100),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Das Kapital'),53),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kommunistiska manifestet'),47),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kommunistiska manifestet'),14),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kommunistiska manifestet'),46),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Samlade dikter'),63),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Samlade dikter'),65),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Samlade dikter'),37),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kallocain'),17),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kallocain'),97),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kallocain'),80),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Astarte'),4),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Astarte'),97),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Astarte'),12),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Kris'),57),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Kris'),68),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Kris'),7),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Ella gör sig fri'),2),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Ella gör sig fri'),97),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Ella gör sig fri'),82),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Utvandrarna'),43),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Utvandrarna'),67),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Utvandrarna'),8),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Invandrarna'),84),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Invandrarna'),39),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Invandrarna'),99),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Nybyggarna'),35),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Nybyggarna'),49),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Nybyggarna'),61),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Adlibris'),(SELECT ISBN13 FROM Books WHERE Title = 'Sista brevet till Sverige'),75),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),(SELECT ISBN13 FROM Books WHERE Title = 'Sista brevet till Sverige'),91),
+	((SELECT ID FROM Shops WHERE Name LIKE 'Akademibokhandeln'),(SELECT ISBN13 FROM Books WHERE Title = 'Sista brevet till Sverige'),7);
+END
+--Om det inte finns något i tabellen Kunder, lägg till.--
+IF NOT EXISTS(SELECT * FROM Customers WHERE UserID = 1)
+BEGIN
+	INSERT INTO Customers
+	--ID, Shop, UserEmail, UserPassword, UserFirstName, UserLastName, UserCountry, UserCity, UserState, UserAdress, UserZipCode
+	VALUES(1,(SELECT ID FROM Shops WHERE Name LIKE 'Bokus'),'walterwhite1958@hotmail.com','password123','Walter','White','United States of America','Albuquerque','New Mexico','308 Negra Arroyo Lane','87104');
 END
 --Välja alla tabller--
 --SELECT * FROM Authors;
 --SELECT * FROM Books;
 --SELECT * FROM Shops;
-SELECT Books.ISBN13, 
-	Books.Title, 
-	Books.[Release Date],
-	CONCAT(Authors.[Last Name],', ',Authors.[First Name]) AS 'By', 
-	Amount, 
-	Shops.Name AS 'Available At'
-	FROM InventoryBalance
-	JOIN Shops	 ON Shops.ID = InventoryBalance.ShopID
-	JOIN Books	 ON Books.ISBN13 = InventoryBalance.ISBN13
-	JOIN Authors ON Authors.ID = Books.AuthorID
-WHERE Amount>0;
+
+--Detta kan/ska konventeras till en vy--
+SELECT	CONCAT([First Name],' ',[Last Name]) AS [Namn], 
+		CONCAT(DATEDIFF(year,a.Birthdate,IsNULL(a.[Death Date],SYSDATETIME())),' år') AS [Ålder],
+		CONCAT(COUNT(b.ISBN13),' st') AS [Böcker],
+		CONCAT(SUM(i.Amount*b.Price),' kr') AS [Lagervärde]
+	FROM InventoryBalance as i
+	JOIN Books as b 
+		ON b.ISBN13 = i.ISBN13
+	JOIN Authors as a
+		ON a.ID = b.AuthorID
+	GROUP BY [First Name],[Last Name], a.Birthdate, a.[Death Date];
