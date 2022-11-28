@@ -1,0 +1,33 @@
+--CREATE OR ALTER VIEW [TitlesPerAuthors] AS
+--SELECT	([First Name]+' '+[Last Name]) AS [Namn], 
+--			(CAST(DATEDIFF(year,a.Birthdate,IsNULL(a.[Death Date],SYSDATETIME())) as nvarchar(max))+' år') AS [Ålder],
+--			(CAST(COUNT(DISTINCT b.ISBN13) as nvarchar(max))+' st') AS [Böcker],
+--			(CAST(SUM(i.Amount*b.Price) as nvarchar(max))+' kr') AS [Lagervärde]
+--	FROM InventoryBalance as i
+--	JOIN Books as b 
+--		ON b.ISBN13 = i.ISBN13
+--	JOIN BooksWithManyAuthors as ba
+--		ON b.ISBN13 = ba.Book
+--	JOIN Authors as a
+--		ON a.ID = ba.Author
+--	GROUP BY [First Name],[Last Name], a.Birthdate, a.[Death Date];
+
+
+--Skapa vyn 'BookView', denna vy är till för att visa som det oftast visas på boksidor med namn, författare, pris, osv.
+--CREATE OR ALTER VIEW [BookView] AS
+--	SELECT	b.Title AS [Title], 
+--			a.[First Name]+' '+a.[Last Name] AS [Name],
+--			b.Price AS [Cost],
+--			bt.Name AS [Format],
+--			b.[Release Date] AS [Release Date],
+--			p.Name AS [Publisher],
+--			b.ISBN13
+--	FROM Books AS b
+--	JOIN BooksWithManyAuthors AS ba
+--	ON ba.Book = b.ISBN13
+--	JOIN Authors as a
+--	ON a.ID = ba.Author
+--	JOIN BookType as bt
+--	ON bt.ID = b.BookType
+--	JOIN Publisher as p
+--	ON p.ID = b.Publisher;
