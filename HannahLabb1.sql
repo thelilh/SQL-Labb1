@@ -271,7 +271,7 @@ IF NOT EXISTS(SELECT * FROM Customers WHERE ID = 1)
 			'60030');
 			
 --Om det inte finns något i tabellen Orders, lägg till.--
-IF NOT EXISTS(SELECT * FROM Orders WHERE OrderID = 1)
+IF NOT EXISTS(SELECT * FROM Orders WHERE ID = 1)
 	INSERT INTO Orders
 	-- OrderID, OrderUser, OrderBook, OrderShop 
 	VALUES	(1, 
