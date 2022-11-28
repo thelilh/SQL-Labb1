@@ -89,7 +89,9 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='BooksWithManyAuthors' and xt
 	CREATE TABLE BooksWithManyAuthors(
 		Author integer NOT NULL,
 		Book BIGINT NOT NULL,
-		CONSTRAINT PK_BooksWithManyAuthors_ID PRIMARY KEY(Author,Book)
+		CONSTRAINT PK_BooksWithManyAuthors_ID PRIMARY KEY(Author,Book),
+		CONSTRAINT FK_BooksWithManyAuthors_Author FOREIGN KEY(Author) REFERENCES Authors(ID),
+		CONSTRAINT FK_BooksWithManyAuthors_Book FOREIGN KEY(Book) REFERENCES Books(ISBN13)
 	);
 GO
 --Om vi inte har en 'orders' tabell ska den skapas.
