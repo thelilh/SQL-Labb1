@@ -40,11 +40,11 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Books' and xtype='U')
 		[Language] nvarchar(max) NOT NULL,
 		[Price] integer NOT NULL,
 		[Release Date] DATE NOT NULL,
-		[Publisher] integer NOT NULL,
-		[BookType] integer NOT NULL,
+		[PublisherID] integer NOT NULL,
+		[BookTypeID] integer NOT NULL,
 		CONSTRAINT PK_Books_ISBN13 PRIMARY KEY(ISBN13),
-		CONSTRAINT FK_Books_Publisher FOREIGN KEY (Publisher) REFERENCES Publisher(ID),
-		CONSTRAINT FK_Books_Type FOREIGN KEY (BookType) REFERENCES BookType(ID)
+		CONSTRAINT FK_Books_Publisher FOREIGN KEY (PublisherID) REFERENCES Publisher(ID),
+		CONSTRAINT FK_Books_Type FOREIGN KEY (BookTypeID) REFERENCES BookType(ID)
     );
 GO
 --Om Tabellen Shops inte finns, skapa den.--
@@ -59,19 +59,19 @@ GO
 --Om InventoryBalance inte finns, skapa den.--
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='InventoryBalance' and xtype='U')
     CREATE TABLE InventoryBalance (
-		Shop integer NOT NULL,
-		ISBN13 BIGINT NOT NULL,
+		ShopID integer NOT NULL,
+		BookID BIGINT NOT NULL,
 		Amount integer NOT NULL,
-		CONSTRAINT PK_Inventory_ID PRIMARY KEY(Shop,ISBN13),
-		CONSTRAINT FK_Inventory_ISBN13 FOREIGN KEY(ISBN13) REFERENCES Books(ISBN13),
-		CONSTRAINT FK_Inventory_Shop FOREIGN KEY(Shop) REFERENCES Shops(ID)
+		CONSTRAINT PK_Inventory_ID PRIMARY KEY(ShopID,BookID),
+		CONSTRAINT FK_Inventory_ISBN13 FOREIGN KEY(BookID) REFERENCES Books(ISBN13),
+		CONSTRAINT FK_Inventory_Shop FOREIGN KEY(ShopID) REFERENCES Shops(ID)
     );
 GO
 --Om Customers inte finns, skapa den.--
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Customers' and xtype='U')
     CREATE TABLE Customers (
 		ID integer NOT NULL,
-		Shop integer NOT NULL, --Vilken butik tillhör användaren?
+		ShopID integer NOT NULL, --Vilken butik tillhör användaren?
 		Email nvarchar(max) NOT NULL, --Perfekt, användaren kan få sin email som login
 		Password nvarchar(max) NOT NULL, --Vad menar du att detta är en säkerhetsrisk?
 		FirstName nvarchar(max) NOT NULL, --Användarens namn
@@ -82,29 +82,29 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Customers' and xtype='U')
 		Adress nvarchar(max) NOT NULL, --Användarens adress
 		ZipCode nvarchar(12) NOT NULL, --Detta är en nvarchar då Storbritannien, som exempel, har OX9 1AA
 		CONSTRAINT PK_CustomerID PRIMARY KEY(ID),
-		CONSTRAINT FK_Customers_Shop FOREIGN KEY(Shop) REFERENCES Shops(ID)
+		CONSTRAINT FK_Customers_Shop FOREIGN KEY(ShopID) REFERENCES Shops(ID)
     );
 GO
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='BooksWithManyAuthors' and xtype='U')
 	CREATE TABLE BooksWithManyAuthors(
-		Author integer NOT NULL,
-		Book BIGINT NOT NULL,
-		CONSTRAINT PK_BooksWithManyAuthors_ID PRIMARY KEY(Author,Book),
-		CONSTRAINT FK_BooksWithManyAuthors_Author FOREIGN KEY(Author) REFERENCES Authors(ID),
-		CONSTRAINT FK_BooksWithManyAuthors_Book FOREIGN KEY(Book) REFERENCES Books(ISBN13)
+		AuthorID integer NOT NULL,
+		BookID BIGINT NOT NULL,
+		CONSTRAINT PK_BooksWithManyAuthors_ID PRIMARY KEY(AuthorID,BookID),
+		CONSTRAINT FK_BooksWithManyAuthors_Author FOREIGN KEY(AuthorID) REFERENCES Authors(ID),
+		CONSTRAINT FK_BooksWithManyAuthors_Book FOREIGN KEY(BookID) REFERENCES Books(ISBN13)
 	);
 GO
 --Om vi inte har en 'orders' tabell ska den skapas.
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Orders' and xtype='U')
 	CREATE TABLE Orders(
-		OrderID BIGINT, --Unikt ID för JUST DEN beställningen.
-		OrderUser integer, --Vilken användare beställer?
-		OrderBook BIGINT, --Vilken bok beställs?
-		OrderShop integer, --Varifrån beställdes boken?
-		CONSTRAINT PK_Orders_Number PRIMARY KEY(OrderID), --Använd det Unika ID som PK
-		CONSTRAINT FK_Orders_Book FOREIGN KEY(OrderBook) REFERENCES Books(ISBN13), --Hämta Bokens ISBN13 från tabellen Books
-		CONSTRAINT FK_Orders_User FOREIGN KEY(OrderUser) REFERENCES Customers(ID), --Hämta Användarens ID från tabellen Customers
-		CONSTRAINT FK_Orders_Shop FOREIGN KEY(OrderShop) REFERENCES Shops(ID) --Hämta Affärens ID från tabellen Shops
+		ID BIGINT, --Unikt ID för JUST DEN beställningen.
+		UserID integer, --Vilken användare beställer?
+		BookID BIGINT, --Vilken bok beställs?
+		ShopID integer, --Varifrån beställdes boken?
+		CONSTRAINT PK_Orders_Number PRIMARY KEY(ID), --Använd det Unika ID som PK
+		CONSTRAINT FK_Orders_Book FOREIGN KEY(BookID) REFERENCES Books(ISBN13), --Hämta Bokens ISBN13 från tabellen Books
+		CONSTRAINT FK_Orders_User FOREIGN KEY(UserID) REFERENCES Customers(ID), --Hämta Användarens ID från tabellen Customers
+		CONSTRAINT FK_Orders_Shop FOREIGN KEY(ShopID) REFERENCES Shops(ID) --Hämta Affärens ID från tabellen Shops
 	);
 GO
 --Om det inte finns något i tabellen Authors, lägg till.--
@@ -185,7 +185,7 @@ IF NOT EXISTS(SELECT * FROM Books WHERE ISBN13 = 9789174295559)
 			(SELECT ID FROM Publisher WHERE Name LIKE '%Svenska%'),
 			(SELECT ID FROM BookType WHERE Name LIKE 'Pocket'));
 --Om det inte finns något i tabellen InventoryBalance, lägg till.--
-IF NOT EXISTS(SELECT * FROM InventoryBalance WHERE Shop = 1)
+IF NOT EXISTS(SELECT * FROM InventoryBalance WHERE ShopID = 1)
 	INSERT INTO InventoryBalance
 	--ID, ISBN, AMOUNT
 	VALUES
@@ -292,7 +292,7 @@ IF NOT EXISTS(SELECT * FROM Orders WHERE OrderID = 1)
 --Skapa 'many-to-many' relationen mellan böcker och författare
 --Om Tabellen Shops inte finns, skapa den.--
 
-IF NOT EXISTS(SELECT * FROM BooksWithManyAuthors WHERE Author = 1)
+IF NOT EXISTS(SELECT * FROM BooksWithManyAuthors WHERE AuthorID = 1)
 	INSERT INTO BooksWithManyAuthors 
 	VALUES
 			((SELECT ID FROM Authors WHERE [First Name] LIKE 'Karl' AND [Last Name] LIKE 'Marx'),(SELECT ISBN13 FROM Books WHERE Title LIKE 'Das Kapital')),
