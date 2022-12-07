@@ -1,23 +1,23 @@
-<mxfile host="app.diagrams.net" modified="2022-12-07T09:12:17.903Z" agent="5.0 (Windows)" version="20.6.0" etag="j1T_4BfReh9Xx4-EeBM4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-07T09:17:22.465Z" agent="5.0 (Windows)" version="20.6.0" etag="p1bvZ5EAK4_JFAiSbkx9" type="github">
   <diagram id="Pv0YbJTncE2eVc86ijqT" name="Page-1">
-    <mxGraphModel dx="1422" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="QKvLdhwazL2BI-9HEcGe-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="80" width="560" height="350" as="geometry" />
+          <mxGeometry x="40" y="40" width="560" height="350" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="110" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="70" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="80" width="180" height="350" as="geometry" />
+          <mxGeometry x="40" y="40" width="180" height="350" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="110" width="120" height="120" as="geometry" />
+          <mxGeometry x="70" y="70" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-16" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="81.5" y="267" width="97" height="20" as="geometry" />
+          <mxGeometry x="81.5" y="227" width="97" height="20" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-5" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-16">
           <mxGeometry x="42.5" width="15" height="20" as="geometry" />
@@ -41,142 +41,145 @@
           <mxGeometry x="11" width="15" height="20" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-17" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;[SONG]&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="70" y="230" width="120" height="20" as="geometry" />
+          <mxGeometry x="70" y="190" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-18" value="[ARTIST]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="70" y="250" width="120" height="10" as="geometry" />
+          <mxGeometry x="70" y="210" width="120" height="10" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-19" value="PLAYLIST NAME" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="80" width="380" height="30" as="geometry" />
+          <mxGeometry x="220" y="40" width="380" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-20" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="115" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="75" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-22" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="115" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="75" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-24" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="115" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="75" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="150" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="110" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-26" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="155" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="115" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-27" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="155" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="115" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-28" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="155" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="115" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-29" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="190" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="150" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-30" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="195" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="155" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-31" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="195" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="155" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-32" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="195" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="155" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-33" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="230" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="190" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-34" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="235" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="195" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-35" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="235" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="195" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-36" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="235" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="195" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-37" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="270" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="230" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-38" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="275" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="235" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-39" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="275" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="235" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-40" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="275" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="235" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-41" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="310" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="270" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-42" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="315" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="275" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-43" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="315" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="275" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-44" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="315" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="275" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-45" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="350" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="310" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-46" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="355" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="315" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-47" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="355" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="315" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-48" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="355" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="315" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-49" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="220" y="390" width="380" height="40" as="geometry" />
+          <mxGeometry x="220" y="350" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-50" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="260" y="395" width="30" height="30" as="geometry" />
+          <mxGeometry x="260" y="355" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-51" value="&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;[SONG] &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;[ARTIST]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="290" y="395" width="90" height="30" as="geometry" />
+          <mxGeometry x="290" y="355" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-52" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="470" y="395" width="90" height="30" as="geometry" />
+          <mxGeometry x="470" y="355" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QKvLdhwazL2BI-9HEcGe-250" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontColor=#000000;" edge="1" parent="1" source="QKvLdhwazL2BI-9HEcGe-60" target="QKvLdhwazL2BI-9HEcGe-249">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-60" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="115" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="75" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-61" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="155" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="115" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-62" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="195" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="155" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-63" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="235" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="195" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-64" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="275" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="235" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-65" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="315" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="275" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-66" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="355" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="315" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-67" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="560" y="395" width="30" height="30" as="geometry" />
+          <mxGeometry x="560" y="355" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-69" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="85" y="290" width="90" height="30" as="geometry" />
+          <mxGeometry x="85" y="250" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-114" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="460" width="560" height="340" as="geometry" />
+          <mxGeometry x="40" y="420" width="560" height="340" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-128" value="FIND A SONG" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="40" y="460" width="560" height="30" as="geometry" />
+          <mxGeometry x="40" y="420" width="560" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-169" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="520" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="480" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-115" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-169">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -194,10 +197,10 @@
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-177" value="[SEARCH QUERY]" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="40" y="490" width="560" height="30" as="geometry" />
+          <mxGeometry x="40" y="450" width="560" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-211" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="560" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="520" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-212" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-211">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -215,7 +218,7 @@
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-217" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="600" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="560" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-218" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-217">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -233,7 +236,7 @@
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-223" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="640" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="600" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-224" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-223">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -251,7 +254,7 @@
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-229" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="680" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="640" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-230" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-229">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -269,7 +272,7 @@
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-235" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="720" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="680" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-236" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-235">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -287,7 +290,7 @@
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-241" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="760" width="560" height="40" as="geometry" />
+          <mxGeometry x="40" y="720" width="560" height="40" as="geometry" />
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-242" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-241">
           <mxGeometry width="560" height="40" as="geometry" />
@@ -303,6 +306,15 @@
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-246" value="+" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#02AB29;fontColor=#FFFFFF;" vertex="1" parent="QKvLdhwazL2BI-9HEcGe-241">
           <mxGeometry x="501.05263157894734" y="5" width="44.21052631578947" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QKvLdhwazL2BI-9HEcGe-249" value="Removes the song from the playlist" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="655" y="47.5" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="QKvLdhwazL2BI-9HEcGe-251" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Adds the song to a playlist&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="640" y="457.5" width="200" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="QKvLdhwazL2BI-9HEcGe-252" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#000000;" edge="1" parent="1" source="QKvLdhwazL2BI-9HEcGe-160" target="QKvLdhwazL2BI-9HEcGe-251">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
