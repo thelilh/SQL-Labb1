@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-07T09:21:41.726Z" agent="5.0 (Windows)" version="20.6.0" etag="0LnlXd6l_aCQE57oY5s-" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-12-07T09:27:33.468Z" agent="5.0 (Windows)" version="20.6.0" etag="WJTcEy9zLtJ31H6Pdlm0" type="github" pages="3">
   <diagram id="Pv0YbJTncE2eVc86ijqT" name="Playlist">
-    <mxGraphModel dx="1673" dy="885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="813" dy="430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -142,9 +142,6 @@
         <mxCell id="QKvLdhwazL2BI-9HEcGe-52" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="470" y="355" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="QKvLdhwazL2BI-9HEcGe-250" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontColor=#000000;" edge="1" parent="1" source="QKvLdhwazL2BI-9HEcGe-60" target="QKvLdhwazL2BI-9HEcGe-249">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-60" value="X" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FF2D03;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="560" y="75" width="30" height="30" as="geometry" />
         </mxCell>
@@ -171,9 +168,6 @@
         </mxCell>
         <mxCell id="QKvLdhwazL2BI-9HEcGe-69" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;MM:SS&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="85" y="250" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="QKvLdhwazL2BI-9HEcGe-249" value="Removes the song from the playlist" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="655" y="47.5" width="170" height="85" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -323,6 +317,44 @@
         </mxCell>
         <mxCell id="lvVfLBldRQ0rfiOvd5gZ-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#000000;" edge="1" parent="1" source="lvVfLBldRQ0rfiOvd5gZ-8" target="lvVfLBldRQ0rfiOvd5gZ-46">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="PoPiOC0Jwr7dImxgZkcR" name="Editing a Song">
+    <mxGraphModel dx="813" dy="430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="K-BgfPu4GBBDup5JaeFO-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="560" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="K-BgfPu4GBBDup5JaeFO-2" value="Editing [SONG]" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K-BgfPu4GBBDup5JaeFO-48" value="SAVE" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="350" width="560" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-7" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="40" y="70" width="560" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;SONG IMAGE&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0ILpmKYzyJXZGLEGDiYC-7">
+          <mxGeometry width="240" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-8" value="" style="group" vertex="1" connectable="0" parent="0ILpmKYzyJXZGLEGDiYC-7">
+          <mxGeometry x="240" width="320" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-2" value="[IMAGE LINK]" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="0ILpmKYzyJXZGLEGDiYC-8">
+          <mxGeometry width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-3" value="[SONG]" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="0ILpmKYzyJXZGLEGDiYC-8">
+          <mxGeometry y="70" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-4" value="[ARTIST]" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="0ILpmKYzyJXZGLEGDiYC-8">
+          <mxGeometry y="140" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="0ILpmKYzyJXZGLEGDiYC-5" value="MM:SS" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="0ILpmKYzyJXZGLEGDiYC-8">
+          <mxGeometry y="210" width="320" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
